@@ -5,8 +5,9 @@ import re
 
 app = Flask(__name__)
 CORS(app)
+M2_PATH = "/usr/bin/M2"  # 你的 M2 絕對路徑
 
-M2_PATH = "/opt/homebrew/bin/M2"  # 你的 M2 絕對路徑
+#M2_PATH = "/opt/homebrew/bin/M2"  # 你的 M2 絕對路徑
 
 def run_sos(poly):
     # 清理輸入
