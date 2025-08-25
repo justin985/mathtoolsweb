@@ -29,10 +29,10 @@
         <a href="https://github.com/yourusername" target="_blank" class="social-link">
           <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="social-link">
-          <i class="fab fa-linkedin"></i> LinkedIn
+        <a href="https://www.instagram.com/justin_chien626?igsh=MXdmNGVsajhsY2pzbA%3D%3D&utm_source=qr" target="_blank" class="social-link">
+          <i class="fab ig"></i> IG
         </a>
-        <a href="mailto:your.email@example.com" class="social-link">
+        <a href="mailto:justin980626@example.com" class="social-link">
           <i class="fas fa-envelope"></i> Email
         </a>
       </div>
