@@ -1,7 +1,6 @@
 <template>
   <nav class="navbar">
     <div class="navbar-brand">
-    
       <h1>數學工具箱</h1>
     </div>
     <div class="navbar-menu">
@@ -26,14 +25,17 @@
     <div class="modal-content" @click.stop>
       <h3>聯絡開發者</h3>
       <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank" class="social-link">
-          <i class="fab fa-github"></i> GitHub
+        <a href="https://github.com/yourusername" target="_blank" class="social-link github">
+          <i class="mdi mdi-github"></i>
+          <span>GitHub</span>
         </a>
-        <a href="https://www.instagram.com/justin_chien626?igsh=MXdmNGVsajhsY2pzbA%3D%3D&utm_source=qr" target="_blank" class="social-link">
-          <i class="fab ig"></i> IG
+        <a href="https://www.instagram.com/justin_chien626?igsh=MXdmNGVsajhsY2pzbA%3D%3D&utm_source=qr" target="_blank" class="social-link instagram">
+          <i class="mdi mdi-instagram"></i>
+          <span>Instagram</span>
         </a>
-        <a href="mailto:justin980626@example.com" class="social-link">
-          <i class="fas fa-envelope"></i> Email
+        <a href="mailto:justin980626@example.com" class="social-link email">
+          <i class="mdi mdi-email"></i>
+          <span>Email</span>
         </a>
       </div>
       <button @click="isContactModalVisible = false">關閉</button>
@@ -145,18 +147,34 @@ const showContactModal = () => {
 .social-link {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.8rem;
-  background-color: #f5f5f5;
-  border-radius: 4px;
-  color: #2c3e50;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  color: white;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-link i {
+  font-size: 1.5rem;
+  margin-right: 0.8rem;
+}
+
+.social-link.github {
+  background-color: #24292e;
+}
+
+.social-link.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-link.email {
+  background-color: #4a90e2;
 }
 
 .social-link:hover {
-  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
