@@ -196,20 +196,22 @@ const calculate = async () => {
 
 <style scoped>
 .calculator-container {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
-  margin: 5vh auto;
+  margin: 0 auto;
   padding: 1rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
 }
 
 @media (min-width: 768px) {
   .calculator-container {
-    width: 100%;
+    width: 90%;
     max-width: 800px;
-    margin: 10vh auto;
+    margin: 5vh auto;
+    min-height: auto;
   }
 }
 

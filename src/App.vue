@@ -23,10 +23,15 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
   min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
 }
 </style>
