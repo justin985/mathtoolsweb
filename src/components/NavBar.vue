@@ -5,9 +5,9 @@
     </div>
     <div class="navbar-menu">
       <a href="#home" class="navbar-item">首頁</a>
-      <a href="#calculator" class="navbar-item">配方計算</a>
+      <a href="#calculator" class="navbar-item">配方</a>
       <a href="#articles" class="navbar-item" @click.prevent="showDevelopingMessage">文章</a>
-      <a href="#contact" class="navbar-item" @click.prevent="showContactModal">聯絡開發者</a>
+      <a href="#contact" class="navbar-item" @click.prevent="showContactModal">聯絡資訊</a>
     </div>
   </nav>
 
@@ -23,11 +23,11 @@
   <!-- 聯絡資訊 Modal -->
   <div v-if="isContactModalVisible" class="modal-overlay" @click="isContactModalVisible = false">
     <div class="modal-content" @click.stop>
-      <h3>聯絡開發者</h3>
+      <h3>聯絡資訊</h3>
       <div class="social-links">
-        <a href="https://github.com/yourusername" target="_blank" class="social-link github">
-          <i class="mdi mdi-github"></i>
-          <span>GitHub</span>
+        <a href="https://www.facebook.com/share/1F4hJ9PAgY/?mibextid=wwXIfr" target="_blank" class="social-link facebook">
+          <i class="mdi mdi-facebook"></i>
+          <span>Facebook</span>
         </a>
         <a href="https://www.instagram.com/justin_chien626?igsh=MXdmNGVsajhsY2pzbA%3D%3D&utm_source=qr" target="_blank" class="social-link instagram">
           <i class="mdi mdi-instagram"></i>
@@ -160,8 +160,10 @@ const showContactModal = () => {
   margin-right: 0.8rem;
 }
 
-.social-link.github {
-  background-color: #24292e;
+
+
+.social-link.facebook {
+  background-color: #3b5998;
 }
 
 .social-link.instagram {

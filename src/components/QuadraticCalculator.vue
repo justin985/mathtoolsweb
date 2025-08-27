@@ -7,7 +7,6 @@
         class="math-input"
         type="text"
         placeholder="輸入方程式"
-        readonly
       />
     </div>
     
@@ -198,9 +197,9 @@ const calculate = async () => {
 <style scoped>
 .calculator-container {
   width: 90%;
-  max-width: 90vw;
+  max-width: 600px;
   margin: 5vh auto;
-  padding: min(5vw, 1rem);
+  padding: 1rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);

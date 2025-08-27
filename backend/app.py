@@ -28,7 +28,7 @@ print toString result;
 """
     try:
         result = subprocess.run(
-            [M2_PATH, "--no-readline"],
+            [M2_PATH, "--no-readline", "--no-debug", "--silent"],
             input=script.encode("utf-8"),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
