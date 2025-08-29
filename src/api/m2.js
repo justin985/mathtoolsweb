@@ -1,6 +1,6 @@
 export async function runSOS(expr) {
   try {
-    let res = await fetch("http://143.198.85.94:5000/sos", {
+    let res = await fetch("/sos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ expr })
