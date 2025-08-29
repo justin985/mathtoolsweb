@@ -198,18 +198,19 @@ const calculate = async () => {
 .calculator-container {
   width: 100%;
   max-width: 600px;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 200px auto 0 auto;
+  padding: 1rem ;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
+  
 }
 
-@media (min-width: 768px) {
+@media (min-width: 300px) {
   .calculator-container {
     width: 90%;
-    max-width: 800px;
+    max-width: 690px;
     margin: 5vh auto;
     min-height: auto;
   }

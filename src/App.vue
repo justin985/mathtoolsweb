@@ -29,9 +29,9 @@ body {
 }
 
 main {
-  min-height: 100vh;
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
+  padding-top: 4rem;
 }
 </style>
