@@ -8,9 +8,6 @@
         <QuadraticCalculator />
       </article>
     </main>
-    <footer role="contentinfo" class="app-footer">
-      <p>&copy; 2024 數學工具箱. 保留所有權利.</p>
-    </footer>
   </div>
 </template>
 
@@ -58,11 +55,5 @@ main {
   width: 100%;
 }
 
-.app-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: auto;
-}
+
 </style>
