@@ -59,6 +59,28 @@
       <div class="result-title">注意到＝</div>
       <div style="color:#2c3e50" class="result-field" v-html="renderedResult"></div>
     </div>
+
+    <!-- 常見問題 -->
+    <div class="faq-section">
+      <h3>常見問題</h3>
+      <div class="faq-items">
+        <div class="faq-item">
+          <h4>為什麼配不出來？</h4>
+          <p>1. 輸入不符合格式</p>
+          <p>2. 你的係數是無理數（尚未開發）</p>
+          <p>3. 你的方程包含分式（尚未開發）</p>
+          <p>4. 伺服器維修中</p>
+        </div>
+        <div class="faq-item">
+          <h4>支援哪些輸入格式？</h4>
+          <p>1. 變數：使用 a-z 表示</p>
+          <p>2. 指數：使用 ^ 符號，如 x^2 表示 x²</p>
+          <p>3. 乘法：使用 * 符號，如 2*x 表示 2x</p>
+          <p>4. 可以使用括號 ( ) 來分組</p>
+          <p>5. ❗️ 未知數前要打乘號</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -204,7 +226,47 @@ const calculate = async () => {
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   min-height: calc(100vh - 70px);
-  
+}
+
+.faq-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.faq-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.faq-items {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 @media (min-width: 300px) {
