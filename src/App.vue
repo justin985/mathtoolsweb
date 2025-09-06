@@ -27,7 +27,7 @@
 
     <div class="main-content">
       <header class="top-bar" role="banner">
-        <button class="menu-toggle" @click="toggleSidebar" aria-label="切換選單">
+        <button class="menu-toggle" @click.stop="toggleSidebar" aria-label="切換選單">
           <i class="mdi mdi-menu"></i>
         </button>
         <div class="user-section">
@@ -124,7 +124,7 @@ body {
   top: 0;
   overflow-y: auto;
   transition: transform 0.3s ease;
-  z-index: 1000;
+  z-index: 2001;
 }
 
 .sidebar-header {
@@ -194,6 +194,9 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .menu-toggle {
@@ -203,6 +206,9 @@ body {
   font-size: 1.5rem;
   color: #1a1f2c;
   cursor: pointer;
+  padding: 0.5rem;
+  z-index: 2002;
+  position: relative;
 }
 
 .user-section {
