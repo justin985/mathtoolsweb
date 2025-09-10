@@ -3,12 +3,18 @@
     <aside class="sidebar" :class="{ 'sidebar-open': isSidebarOpen }" role="navigation" aria-label="主導航選單" @click.stop>
       <div class="sidebar-header">
         <img src="/vite.svg" alt="Logo" class="sidebar-logo" />
-        <h2>數學工具箱</h2> <!-- 不要改大小-->
+        <h2>數學工具箱</h2>
       </div>
       <nav class="sidebar-nav">
+        <router-link to="/" class="nav-item" :class="{ 'active': $route.path === '/' }">
+          <i class="mdi mdi-home"></i>
+          首頁
+        </router-link>
         <div class="nav-section">
           <h2>代數</h2>
-          <a href="#quadratic" class="nav-item active">配方計算器</a>
+          <router-link to="/sostools" class="nav-item" :class="{ 'active': $route.path === '/sostools' }">
+            配方計算器
+          </router-link>
           <a href="#" class="nav-item disabled">多項式計算</a>
           <a href="#" class="nav-item disabled">矩陣運算</a>
         </div>
@@ -30,18 +36,10 @@
         <button class="menu-toggle" @click.stop="toggleSidebar" aria-label="切換選單">
           <i class="mdi mdi-menu"></i>
         </button>
-        <div class="user-section">
-          <a href="#contact" @click.prevent="showContactModal" class="contact-link">
-            <i class="mdi mdi-email"></i>
-            聯絡資訊
-          </a>
-        </div>
       </header>
 
       <main role="main" aria-label="主要內容區">
-        <article class="calculator-container">
-          <QuadraticCalculator />
-        </article>
+        <router-view></router-view>
       </main>
     </div>
 
@@ -71,7 +69,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import QuadraticCalculator from './components/QuadraticCalculator.vue'
 
 const isSidebarOpen = ref(false)
 const isContactModalVisible = ref(false)
@@ -123,8 +120,18 @@ body {
   left: 0;
   top: 0;
   overflow-y: auto;
-  transition: transform 0.3s ease;
   z-index: 2001;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -280px;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(280px);
+  }
 }
 
 .sidebar-header {
@@ -148,6 +155,10 @@ body {
   margin-bottom: 2rem;
 }
 
+.nav-section:first-of-type {
+  margin-top: 2rem;
+}
+
 .nav-section h2 {
   padding: 0 1.5rem;
   font-size: 0.9rem;
@@ -157,8 +168,10 @@ body {
 }
 
 .nav-item {
-  display: block;
-  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
   color: #94a3b8;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -230,13 +243,6 @@ body {
   font-size: 1.2rem;
 }
 
-.calculator-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  width: 100%;
-}
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -251,59 +257,42 @@ body {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #fff;
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   max-width: 90%;
   width: 400px;
-  text-align: center;
 }
 
 .modal-content h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
-}
-
-.modal-content button {
-  margin-top: 1rem;
-  padding: 0.5rem 1.5rem;
-  background-color: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.modal-content button:hover {
-  background-color: #1d4ed8;
+  margin-bottom: 1.5rem;
+  color: #1a1f2c;
 }
 
 .social-links {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .social-link {
   display: flex;
   align-items: center;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  color: white;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  color: #fff;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
+  transition: opacity 0.3s ease;
 }
 
-.social-link i {
-  font-size: 1.5rem;
-  margin-right: 0.8rem;
+.social-link:hover {
+  opacity: 0.9;
 }
 
 .social-link.facebook {
-  background-color: #3b5998;
+  background-color: #1877f2;
 }
 
 .social-link.instagram {
@@ -314,20 +303,22 @@ body {
   background-color: #2563eb;
 }
 
-.social-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.modal-content button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 0.25rem;
+  color: #1a1f2c;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #d1d5db;
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar-open {
-    transform: translateX(0);
-  }
-
   .main-content {
     margin-left: 0;
   }
@@ -336,9 +327,8 @@ body {
     display: block;
   }
 
-  .modal-content {
-    padding: 1.5rem;
-    margin: 1rem;
+  .top-bar {
+    padding: 1rem;
   }
 }
 </style>
