@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import SosTools from '../views/SosTools.vue'
+import LagrangeCal from '../views/LagrangeCal.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/sostools',
       name: 'sostools',
       component: SosTools
+    },
+    {
+      path: '/lagrange',
+      name: 'lagrange',
+      component: LagrangeCal
     }
   ]
 })

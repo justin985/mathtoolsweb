@@ -12,6 +12,7 @@
           <i class="mdi mdi-function-variant"></i>
           <p>處理方程式、多項式和矩陣運算</p>
           <router-link to="/sostools" class="feature-button">配方計算器</router-link>
+          <router-link to="/lagrange" class="feature-button">拉格朗日計算器</router-link>
           <div class="coming-soon">
             <span>即將推出：</span>
             <ul>
@@ -94,7 +95,7 @@ onMounted(() => {
 
 .hero {
   text-align: center;
-  padding: 6rem;
+  padding: 3rem;
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
 }

@@ -32,11 +32,9 @@
     </aside>
 
     <div class="main-content">
-      <header class="top-bar" role="banner">
-        <button class="menu-toggle" @click.stop="toggleSidebar" aria-label="切換選單">
+      <button class="menu-toggle" @click.stop="toggleSidebar" aria-label="切換選單">
           <i class="mdi mdi-menu"></i>
         </button>
-      </header>
 
       <main role="main" aria-label="主要內容區">
         <router-view></router-view>
@@ -200,18 +198,6 @@ body {
   transition: margin-left 0.3s ease;
 }
 
-.top-bar {
-  background-color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -219,9 +205,11 @@ body {
   font-size: 1.5rem;
   color: #1a1f2c;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 1rem;
   z-index: 2002;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .user-section {
